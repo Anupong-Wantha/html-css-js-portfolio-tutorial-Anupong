@@ -1,3 +1,4 @@
+
 @media screen and (max-width: 1400px){
 
     #profile{
@@ -93,4 +94,13 @@
     .text-container{
         text-align: justify;
     }
+}
+@media screen and (max-width: 1200px){
+    #desktop-nav{
+        display: none;
+    }
+    #hamburger-nav{
+        display: flex;
+    }
+
 }
