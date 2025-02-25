@@ -138,6 +138,7 @@ section{
 }
 .section-container{
     display: flex;
+    
 }
 #profile{
     display: flex;
@@ -237,6 +238,7 @@ section{
 .about-container,
 .about-details-container{
     display: flex;
+    
 }
 .about-pic{
     border-radius: 2rem;
