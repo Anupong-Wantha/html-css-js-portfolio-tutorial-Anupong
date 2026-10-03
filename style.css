@@ -280,23 +280,38 @@ section{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
-.article-container{
+.article-container {
     display: flex;
     text-align: initial;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* เพื่อให้เนื้อหาปัดตกบรรทัดเมื่อหน้าจอแคบ */
     flex-direction: row;
     gap: 2.5rem;
-    justify-content: space-around;
+    justify-content: center; /* เปลี่ยนจาก space-around เป็น center ให้ดูเป็นระเบียบเมื่อมีหลายคอลัมน์ */
+    padding-top: 1rem; /* เพิ่มพื้นที่ด้านบนเล็กน้อย */
 }
-article{
+article {
     display: flex;
-    width: 10rem;
-    justify-content: space-around;
-    gap: 0.5rem;
+    width: calc(50% - 2.5rem); /* ให้แต่ละบทความมีความกว้างประมาณครึ่งนึง หักลบด้วยค่า gap จะได้มี 2 คอลัมน์แบบสวยงาม */
+    min-width: 12.5rem; /* กำหนดความกว้างขั้นต่ำ เพื่อกันไม่ให้ข้อความตกบรรทัดน่าเกลียดเมื่อจอย่อลง */
+    justify-content: flex-start; /* เปลี่ยนจาก space-around เป็น flex-start ให้ไอคอนกับข้อความชิดซ้ายเข้าหากัน */
+    align-items: flex-start; /* ให้ไอคอนอยู่ระดับเดียวกับหัวข้อ */
+    gap: 1rem; /* ระยะห่างระหว่างไอคอนกับข้อความ */
 }
-article .icon{
+article .icon {
     cursor: default;
+    width: 2rem; /* กำหนดขนาดไอคอนให้แน่นอน เผื่อรูปต้นฉบับใหญ่เกินไป */
+    height: 2rem;
+    flex-shrink: 0; /* ป้องกันไม่ให้ไอคอนถูกบีบเล็กลงเมื่อข้อความยาวเกินไป */
+}
+article > div {
+    display: flex;
+    flex-direction: column; /* เพื่อให้ h3 และ p เรียงซ้อนกันแนวตั้ง */
+}
+article h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 .color-container{
     border-color: rgb(163,163,163);
